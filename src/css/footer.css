@@ -1,0 +1,144 @@
+/* Mobile Styles */
+.footer {
+  background-color: #6b0609;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.footer-container {
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 228px;
+  height: 97px;
+}
+.footer-logo-svg {
+  fill: #fff;
+}
+.footer-copyright {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+  /* white-space: nowrap; */
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.footer-nav-item {
+  display: inline-flex;
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 16px;
+  transition: opacity 0.2s;
+  line-height: 1.6;
+}
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+.footer-social-icon {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+}
+.footer-social-link:hover .footer-social-icon,
+.footer-social-link:active .footer-social-icon,
+.footer-social-link:focus .footer-social-icon {
+  opacity: 0.5;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) {
+  .footer-container {
+    max-width: 768px;
+    padding-bottom: 32px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+  }
+  .footer-copyright {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1440px) {
+  .footer {
+    height: auto;
+    padding: 0;
+  }
+
+  .footer-container {
+    max-width: 1440px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 64px;
+    height: 97px;
+  }
+
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+    margin-top: 4px;
+    white-space: nowrap;
+    text-align: left;
+  }
+
+  .nav {
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .footer-socials {
+    justify-content: flex-end;
+  }
+  .footer-logo {
+    order: 1;
+  }
+
+  .footer-copyright {
+    order: 2; /* Moves the copyright text to the second position */
+  }
+
+  .nav {
+    order: 3;
+  }
+
+  .footer-socials {
+    order: 4;
+  }
+}
