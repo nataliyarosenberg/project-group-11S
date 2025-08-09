@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-
+  color: white;
   background-color: #d9d9d9;
   background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
     url('../images/hero/bg-m-1x.webp');
