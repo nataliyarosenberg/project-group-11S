@@ -297,6 +297,53 @@
   </div>
 </section>
 
+      <div class="backdrop">
+  <div class="modal-order">
+    <button class="modal-button-close" type="button">
+      <svg class="svg-close" width="32" height="32">
+        <use href="../img/icons.svg#icon-x-icon"></use>
+      </svg>
+    </button>
+
+    <h2 class="title-order">Замовити зворотний <br />зв’язок</h2>
+    <form class="modal-form">
+      <div class="modal-div-input_label">
+        <label class="modal-label" for="user-name">Ім’я*</label>
+        <input
+          class="modal-input"
+          id="user-name"
+          name="user-name"
+          type="text"
+          placeholder="Дмитро"
+          required
+        />
+      </div>
+      <div class="modal-div-input_label">
+        <label class="modal-label" for="user-phone">Телефон*</label>
+        <input
+          class="modal-input"
+          id="user-phone"
+          name="user-phone"
+          type="tel"
+          placeholder="+38 (099) 123 22 11"
+          required
+        />
+        <!-- pattern="\+38\s?\(?0\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}" -->
+      </div>
+      <div class="modal-div-input_label">
+        <label class="modal-label" for="user-comment">Коментар</label>
+        <textarea
+          class="modal-texarea"
+          id="user-comment"
+          name="user-comment"
+          placeholder="Type your message..."
+        ></textarea>
+      </div>
+      <button class="modal-btn">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
+
     </main>
     <footer class="footer">
   <div class="container footer-container">
