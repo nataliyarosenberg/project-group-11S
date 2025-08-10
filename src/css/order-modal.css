@@ -1,0 +1,242 @@
+/* html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+} */
+
+.backdrop {
+  position: fixed;
+  /* top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; */
+
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.25);
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* opacity: 0;
+  visibility: hidden;
+  pointer-events: none; */
+
+  /* opacity: 1;
+  visibility: visible;
+  pointer-events: auto; */
+}
+
+.backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* .backdrop:not(.is-open) .modal {
+  transform: translate(-50%, -100%);
+} */
+
+.modal-order {
+  /* position: fixed;
+  top: 50%;
+  left: 50%; */
+  position: relative;
+  width: 335px;
+  min-height: 789px;
+  background: #fff;
+  padding: 64px 20px;
+  border-radius: 8px;
+  /* transform: translate(-50%, -50%); */
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .modal-order {
+    padding: 64px;
+    width: 704px;
+    height: 776px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .modal-order {
+    padding: 64px;
+    width: 866px;
+    height: 776px;
+  }
+}
+
+/* modal button close   ------------- */
+
+.modal-button-close {
+  position: absolute;
+  /* fill: #080c09; */
+  width: 32px;
+  height: 32px;
+  top: 16px;
+  right: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.svg-close {
+  display: block;
+  fill: #080c09;
+}
+/* ======== Заголовок==== */
+
+.title-order {
+  font: 700 36px / 120% 'Raleway', sans-serif;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #080c09;
+  margin-bottom: 48px;
+}
+@media screen and (min-width: 768px) {
+  .title-order {
+    font: 700 48px / 120% 'Raleway', sans-serif;
+  }
+}
+
+.modal-label {
+  font: 400 16px / 160% 'Raleway', sans-serif;
+  color: #080c09;
+}
+
+.modal-input {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 12px;
+  margin-top: 8px;
+  width: 295px;
+  height: 42px;
+  background-color: rgba(8, 12, 9, 0.05);
+  font: 400 16px / 160% 'Raleway', sans-serif;
+  color: #080c09;
+  padding: 8px 12px;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.modal-input:focus,
+.modal-texarea:focus {
+  border: 1px solid rgba(8, 12, 9, 0.4);
+  outline: none;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+.modal-input::placeholder {
+  color: rgba(8, 12, 9, 0.6);
+}
+.modal-div-input_label {
+  width: 295px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+.modal-texarea {
+  border: 1px solid rgba(8, 12, 9, 0.15);
+  border-radius: 12px;
+  padding: 12px;
+  width: 295px;
+  height: 180px;
+  margin-top: 8px;
+  color: #080c09;
+  background-color: rgba(8, 12, 9, 0.05);
+  font: 400 16px / 160% 'Raleway', sans-serif;
+  resize: none;
+}
+
+.modal-texarea::placeholder {
+  font: 400 16px / 160% 'Raleway', sans-serif;
+  color: rgba(8, 12, 9, 0.6);
+}
+
+.modal-btn {
+  border-radius: 100px;
+  padding: 10px 24px;
+  width: 196px;
+  height: 46px;
+  box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
+    inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
+    inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+    inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+  background: #6b0609;
+
+  font: 500 16px / 160% 'Raleway', sans-serif;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+  .modal-input {
+    width: 576px;
+  }
+  .modal-texarea {
+    width: 576px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .modal-input,
+  .modal-texarea {
+    width: 738px;
+  }
+}
+
+/* Стилі для інпутів при помилці */
+.modal-input.error {
+  border-color: #d32f2f;
+}
+
+/* Стилі курсору */
+.modal-button-close:hover,
+.modal-btn:hover {
+  cursor: pointer;
+}
+
+/* Стилі для станів кнопок */
+.modal-button-close:hover,
+.modal-button-close:focus {
+  background-color: #404bbf;
+  border: none;
+}
+
+.modal-button-close:hover .svg-close,
+.modal-button-close:focus .svg-close {
+  fill: #ffffff;
+}
+
+.modal-btn:hover,
+.modal-btn:focus {
+  background-color: #4a0a0c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Заборонити скрол */
+body.no-scroll {
+  overflow: hidden;
+}
+
+.input-error::placeholder {
+  color: #6b0609;
+  opacity: 1; /* FF зменшує opacity */
+}
+
+.input-error {
+  font: 400 16px/160% 'Raleway', sans-serif;
+  color: #6b0609; /* Темно-червоний для тексту */
+  border: 1px solid #6b0609;
+  /* background-color: #fff9f9;  */
+}
