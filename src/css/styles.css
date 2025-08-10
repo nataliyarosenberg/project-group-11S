@@ -11,6 +11,12 @@
 @import url('./base.css');
 
 /* Sections style */
+/* @import url('./our-furniture.css');
+@import url('./about-us.css');
+@import url('./footer.css'); */
+@import url('./product-modal.css');
+
+
 
 @import url('./header.css');
 @import url('./hero.css');
