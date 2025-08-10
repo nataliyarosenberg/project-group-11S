@@ -40,7 +40,7 @@ body {
   transform: translate(-50%, -100%);
 } */
 
-.modal {
+.modal-order {
   /* position: fixed;
   top: 50%;
   left: 50%; */
@@ -55,14 +55,14 @@ body {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1439px) {
-  .modal {
+  .modal-order {
     padding: 64px;
     width: 704px;
     height: 776px;
   }
 }
 @media screen and (min-width: 1440px) {
-  .modal {
+  .modal-order {
     padding: 64px;
     width: 866px;
     height: 776px;
