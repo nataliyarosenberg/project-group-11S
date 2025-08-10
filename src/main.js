@@ -1,4 +1,7 @@
+
 import { loadOrderModal, toggleModal } from './js/order-modal.js';
+import { initAccordion } from './js/faq.js';
+initAccordion();
 
 // Завантажуємо модалку при завантаженні сторінки
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,3 +23,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
