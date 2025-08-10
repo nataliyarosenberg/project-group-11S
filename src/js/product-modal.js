@@ -70,6 +70,9 @@ function openModal(product) {
   modalPrice.textContent = `${product.price} грн` || 'Ціна невідома';
   modalDescription.textContent = product.description || 'Опис відсутній';
   orderBtn.dataset.model = product.name || '';
+  orderBtn.setAttribute('data-modal-open', '');
+  orderBtn.setAttribute('data-id', product._id);
+  orderBtn.setAttribute('data-marker', 'product-modal');
 
 
   if (modalRate && typeof product.rate === 'number') {
@@ -125,16 +128,21 @@ modal?.addEventListener('click', e => {
   if (e.target === modal) closeModal();
 });
 
-orderBtn?.addEventListener('click', () => {
-  closeModal();
-
+orderBtn.addEventListener('click', () => {
   const selected = document.querySelector('.color-checkboxes input[type="radio"]:checked');
   const color = selected ? selected.dataset.color : null;
-  const modelName = orderBtn.dataset.model || '';
+
+  if (color) orderBtn.setAttribute('data-color', color);
+  if (orderBtn.dataset.model) orderBtn.setAttribute('data-model', orderBtn.dataset.model);
+
+  closeModal();
+
 
   const evt = new CustomEvent('open-order-modal', {
-    detail: { model: modelName, color }
+    detail: {
+      model: orderBtn.dataset.model || '',
+      color
+    }
   });
-
   document.dispatchEvent(evt);
 });
