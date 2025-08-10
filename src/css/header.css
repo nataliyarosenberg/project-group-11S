@@ -227,7 +227,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .header {
+  .section-header {
     height: 72px;
   }
   .header-container {
