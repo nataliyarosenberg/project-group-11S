@@ -8,7 +8,6 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000;
 }
 
 .header-right {
@@ -228,6 +227,20 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .header {
+    height: 72px;
+  }
+  .header-container {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header-btn {
+    min-width: 129px;
+    height: 42px;
+  }
+
   .mobile-menu {
     display: none;
   }
