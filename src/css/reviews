@@ -37,9 +37,6 @@
   min-width: 280px;
 }
 
-.reviews-stars {
-}
-
 .reviews-text {
   font-weight: 500;
   font-style: Medium;
@@ -79,9 +76,6 @@
 .reviews-slider-btn {
   display: flex;
   gap: 16px;
-}
-
-.slider-btn {
 }
 
 .icon {
