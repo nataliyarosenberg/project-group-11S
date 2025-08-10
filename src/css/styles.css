@@ -12,8 +12,7 @@
 
 /* Sections style */
 
-/* @import url('./our-furniture.css');*/
-
+@import url('./header.css');
 @import url('./hero.css');
 @import url('./our-furniture.css');
 @import url('./about.css');
