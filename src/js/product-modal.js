@@ -12,14 +12,49 @@ const modalSize = document.querySelector('.modal_sizes');
 const orderBtn = document.querySelector('.modal_order-btn');
 const thumbsContainer = document.querySelector('.modal_thumbnails');
 
-document.querySelector('.furniture-list').addEventListener('click', event => {
+const list = document.querySelector('.furniture-list');
+
+let currentIndex = 0;
+let currentImages = [];
+
+function handleEscape(e) {
+  if (e.key === 'Escape') closeModal();
+}
+
+function renderGallery() {
+  if (!currentImages.length) return;
+
+ 
+  modalImg.src = currentImages[currentIndex];
+  modalImg.alt = modalTitle.textContent || 'Фото товару';
+
+  
+  const thumbs = currentImages
+    .map((src, i) => ({ src, i }))
+    .filter(({ i }) => i !== currentIndex)
+    .map(({ src, i }) => `
+      <img class="thumbnail-img" src="${src}" alt="thumb ${i}" data-index="${i}">
+    `)
+    .join('');
+
+  thumbsContainer.innerHTML = thumbs;
+}
+
+thumbsContainer?.addEventListener('click', e => {
+  const t = e.target.closest('.thumbnail-img');
+  if (!t) return;
+  currentIndex = Number(t.dataset.index);
+  renderGallery(); 
+});
+
+list?.addEventListener('click', event => {
   const btn = event.target.closest('.details-btn');
   if (!btn) return;
 
   const card = btn.closest('.furniture-card');
-  const id = card.dataset.id || card.id;
   if (!card) return;
 
+  const id = card.dataset.id || card.id; 
   if (!id || !window.allFurnitures) return;
 
   const product = window.allFurnitures.find(item => item._id === id);
@@ -28,102 +63,78 @@ document.querySelector('.furniture-list').addEventListener('click', event => {
   openModal(product);
 });
 
-function handleEscape(event) {
-  if (event.key === 'Escape') {
-    closeModal();
-  }
-}
 
 function openModal(product) {
-  modalImg.src = product.images?.[0] || '';
-  modalImg.alt = product.description || '';
   modalTitle.textContent = product.name || 'Без назви';
   modalCategory.textContent = product.type || 'Тип невідомий';
   modalPrice.textContent = `${product.price} грн` || 'Ціна невідома';
   modalDescription.textContent = product.description || 'Опис відсутній';
-  orderBtn.dataset.model = product.name;
+  orderBtn.dataset.model = product.name || '';
+
 
   if (modalRate && typeof product.rate === 'number') {
-  const rounded = Math.round(product.rate * 10) / 10;
-  const percentage = (Math.min(5, rounded) / 5) * 100;
-
-  modalRate.innerHTML = `
-    <div class="star-rating" style="--star-fill: ${percentage}%"></div>
-    <span class="rating-text">${rounded.toFixed(1)}</span>
-  `;
-}
-
-  if (thumbsContainer && Array.isArray(product.images)) {
-    thumbsContainer.innerHTML = product.images
-      .slice(1)
-      .map(img => `<img src="${img}" alt="${product.name}" class="thumbnail-img" />`)
-      .join('');
-  }
-
-  if (modalColors && Array.isArray(product.color)) {
- modalColors.innerHTML = product.color
-  .map((color, i) => {
-    const id = `color-${i}`;
-    return `
-      <input type="radio" id="${id}" name="color" data-color="${color}" ${i === 0 ? 'checked' : ''} />
-      <label for="${id}" style="background-color: ${color}"></label>
+    const rounded = Math.round(product.rate * 10) / 10;
+    const percentage = (Math.min(5, rounded) / 5) * 100;
+    modalRate.innerHTML = `
+      <div class="star-rating" style="--star-fill: ${percentage}%"></div>
+      <span class="rating-text">${rounded.toFixed(1)}</span>
     `;
-  })
-  .join('');
+  } else {
+    modalRate.innerHTML = '';
   }
 
-  if (modalSize) {
-    modalSize.textContent = `Розміри: ${product.sizes || 'невідомі'}`;
+  // кольори (radio)
+  if (modalColors && Array.isArray(product.color)) {
+    modalColors.innerHTML = product.color
+      .map((color, i) => {
+        const id = `color-${i}`;
+        return `
+          <input type="radio" id="${id}" name="color" data-color="${color}" ${i === 0 ? 'checked' : ''} />
+          <label for="${id}" style="background-color: ${color}"></label>
+        `;
+      })
+      .join('');
+  } else {
+    modalColors.innerHTML = '';
   }
 
-  if (orderBtn) {
-    orderBtn.dataset.id = product._id;
-  }
+ 
+  modalSize.textContent = `Розміри: ${product.sizes || 'невідомі'}`;
+
+
+  currentImages = Array.isArray(product.images) ? product.images.slice() : [];
+  currentIndex = 0;
+  renderGallery();
+
+  orderBtn.dataset.id = product._id || '';
 
   modal.classList.remove('visually-hidden');
-
-  thumbsContainer.addEventListener('click', event => {
-    const clickedImg = event.target.closest('.thumbnail-img');
-    if (!clickedImg) return;
-
-    modalImg.src = clickedImg.src;
-    modalImg.alt = clickedImg.alt;
-});
   closeModalBtn.focus();
-
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', handleEscape);
 }
 
 function closeModal() {
   modal.classList.add('visually-hidden');
-document.body.style.overflow = '';
+  document.body.style.overflow = '';
   document.removeEventListener('keydown', handleEscape);
 }
 
-closeModalBtn.addEventListener('click', closeModal);
-
-modal.addEventListener('click', event => {
-  if (event.target === modal) {
-    closeModal();
-  }
+closeModalBtn?.addEventListener('click', closeModal);
+modal?.addEventListener('click', e => {
+  if (e.target === modal) closeModal();
 });
 
-orderBtn.addEventListener('click', () => {
+orderBtn?.addEventListener('click', () => {
   closeModal();
 
-  const selectedColorInput = document.querySelector('.color-checkboxes input[type="radio"]:checked');
-  const selectedColor = selectedColorInput ? selectedColorInput.dataset.color : null;
+  const selected = document.querySelector('.color-checkboxes input[type="radio"]:checked');
+  const color = selected ? selected.dataset.color : null;
+  const modelName = orderBtn.dataset.model || '';
 
-  const modelName = orderBtn.dataset.model;
-
-  const event = new CustomEvent('open-order-modal', {
-    detail: {
-      model: modelName,
-      color: selectedColor
-    }
+  const evt = new CustomEvent('open-order-modal', {
+    detail: { model: modelName, color }
   });
-  
-  document.body.style.overflow = '';
-  document.dispatchEvent(event);
+
+  document.dispatchEvent(evt);
 });
