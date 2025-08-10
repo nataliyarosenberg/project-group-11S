@@ -24,17 +24,17 @@ function handleEscape(e) {
 function renderGallery() {
   if (!currentImages.length) return;
 
- 
   modalImg.src = currentImages[currentIndex];
   modalImg.alt = modalTitle.textContent || 'Фото товару';
 
-  
   const thumbs = currentImages
     .map((src, i) => ({ src, i }))
     .filter(({ i }) => i !== currentIndex)
-    .map(({ src, i }) => `
+    .map(
+      ({ src, i }) => `
       <img class="thumbnail-img" src="${src}" alt="thumb ${i}" data-index="${i}">
-    `)
+    `
+    )
     .join('');
 
   thumbsContainer.innerHTML = thumbs;
@@ -44,7 +44,7 @@ thumbsContainer?.addEventListener('click', e => {
   const t = e.target.closest('.thumbnail-img');
   if (!t) return;
   currentIndex = Number(t.dataset.index);
-  renderGallery(); 
+  renderGallery();
 });
 
 list?.addEventListener('click', event => {
@@ -54,7 +54,7 @@ list?.addEventListener('click', event => {
   const card = btn.closest('.furniture-card');
   if (!card) return;
 
-  const id = card.dataset.id || card.id; 
+  const id = card.dataset.id || card.id;
   if (!id || !window.allFurnitures) return;
 
   const product = window.allFurnitures.find(item => item._id === id);
@@ -62,7 +62,6 @@ list?.addEventListener('click', event => {
 
   openModal(product);
 });
-
 
 function openModal(product) {
   modalTitle.textContent = product.name || 'Без назви';
@@ -73,7 +72,6 @@ function openModal(product) {
   orderBtn.setAttribute('data-modal-open', '');
   orderBtn.setAttribute('data-id', product._id);
   orderBtn.setAttribute('data-marker', 'product-modal');
-
 
   if (modalRate && typeof product.rate === 'number') {
     const rounded = Math.round(product.rate * 10) / 10;
@@ -92,7 +90,9 @@ function openModal(product) {
       .map((color, i) => {
         const id = `color-${i}`;
         return `
-          <input type="radio" id="${id}" name="color" data-color="${color}" ${i === 0 ? 'checked' : ''} />
+          <input type="radio" id="${id}" name="color" data-color="${color}" ${
+          i === 0 ? 'checked' : ''
+        } />
           <label for="${id}" style="background-color: ${color}"></label>
         `;
       })
@@ -101,9 +101,7 @@ function openModal(product) {
     modalColors.innerHTML = '';
   }
 
- 
   modalSize.textContent = `Розміри: ${product.sizes || 'невідомі'}`;
-
 
   currentImages = Array.isArray(product.images) ? product.images.slice() : [];
   currentIndex = 0;
@@ -129,20 +127,22 @@ modal?.addEventListener('click', e => {
 });
 
 orderBtn.addEventListener('click', () => {
-  const selected = document.querySelector('.color-checkboxes input[type="radio"]:checked');
+  const selected = document.querySelector(
+    '.color-checkboxes input[type="radio"]:checked'
+  );
   const color = selected ? selected.dataset.color : null;
 
   if (color) orderBtn.setAttribute('data-color', color);
-  if (orderBtn.dataset.model) orderBtn.setAttribute('data-model', orderBtn.dataset.model);
+  if (orderBtn.dataset.model)
+    orderBtn.setAttribute('data-model', orderBtn.dataset.model);
 
   closeModal();
-
 
   const evt = new CustomEvent('open-order-modal', {
     detail: {
       model: orderBtn.dataset.model || '',
-      color
-    }
+      color,
+    },
   });
   document.dispatchEvent(evt);
 });
