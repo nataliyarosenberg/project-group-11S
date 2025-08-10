@@ -1,9 +1,9 @@
-html,
+/* html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-}
+} */
 
 .backdrop {
   position: fixed;
@@ -54,7 +54,7 @@ body {
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1439px) {
   .modal {
     padding: 64px;
     width: 704px;
