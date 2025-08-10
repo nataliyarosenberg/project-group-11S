@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Меблерія</title>
     <link rel="icon" type="image/x-icon" href="/project-group-11S/assets/fav-a1bK-s15.svg" />
@@ -15,9 +14,332 @@
     />
 
     <script type="module" crossorigin src="/project-group-11S/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/project-group-11S/assets/index-DS9CoAMT.css">
+    <link rel="modulepreload" crossorigin href="/project-group-11S/assets/vendor-BOf7_0lP.js">
+    <link rel="stylesheet" crossorigin href="/project-group-11S/assets/vendor-mmxeKHFU.css">
+    <link rel="stylesheet" crossorigin href="/project-group-11S/assets/index-Bd25oVMW.css">
   </head>
   <body>
-    <main></main>
+    <header class="section-header">
+  <div class="container header-container">
+    <a class="header-logo" href="./index.html">
+      <svg class="header-logo-icon" width="159" height="35">
+        <use href="/project-group-11S/assets/symbol-defs-C60ArXzj.svg#icon-Frame-1"></use>
+      </svg>
+    </a>
+    <div class="header-right">
+      <nav class="header-nav">
+        <ul class="header-nav-list">
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="#our-furniture-section"
+              >Наші меблі</a
+            >
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="#about">Про нас</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="#faq-section">Часті питання</a>
+          </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="#reviews">Відгуки</a>
+          </li>
+        </ul>
+      </nav>
+      <a class="header-btn" href="our-furniture-section">До покупок</a>
+    </div>
+    <button class="menu-btn" type="button" data-menu-open>
+      <svg class="header-btn-icon" width="32" height="32">
+        <use href="/project-group-11S/assets/symbol-defs-C60ArXzj.svg#icon-menu"></use>
+      </svg>
+    </button>
+  </div>
+  <!-- Мобильное меню -->
+  <div class="mobile-menu" data-menu>
+    <div class="mobile-menu-content">
+      <div class="logo-btn-container">
+        <a class="logo-menu" href="./index.html">
+          <svg class="header-logo-icon" width="159" height="35">
+            <use href="/project-group-11S/assets/symbol-defs-C60ArXzj.svg#icon-Frame-1"></use>
+          </svg>
+        </a>
+        <button class="mobile-menu-close" type="button" data-menu-close>
+          <svg width="32" height="32">
+            <use href="../sprite/header/symbol-defs.svg#icon-x"></use>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+          <li class="mobile-nav-item">
+            <a href="#our-furniture-section">Наші меблі</a>
+          </li>
+          <li class="mobile-nav-item"><a href="#about">Про нас</a></li>
+          <li class="mobile-nav-item">
+            <a href="#faq-section">Часті питання</a>
+          </li>
+          <li class="mobile-nav-item"><a href="#reviews">Відгуки</a></li>
+        </ul>
+      </nav>
+      <a class="mobile-btn" href="#our-furniture-section">До покупок</a>
+    </div>
+  </div>
+</header>
+
+    <main>
+      <section class="hero">
+  <div class="container hero__container">
+    <div class="hero__content">
+      <h1 class="hero__title">Створіть свій ідеальний дім</h1>
+      <p class="hero__text">
+        Відкрийте для себе колекцію стильних та комфортних меблів, які
+        перетворять ваш простір. Наша продукція поєднує в собі елегантність та
+        функціональність.
+      </p>
+      <button class="hero__button">Що про нас думають</button>
+    </div>
+  </div>
+</section>
+
+      <section class="our-furniture" id="our-furniture-section">
+  <div class="container">
+    <h1 class="our-furniture-header">Наші меблі</h1>
+    <p class="our-furniture-description">
+      Знайдіть ідеальні рішення для вашого інтер'єру
+    </p>
+    <ul class="categories-list">
+      <li class="category-card all">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card sofa">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card wardrobe">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card bed">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card table"><p class="category-title"></p></li>
+      <li class="category-card chairs">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card kitchen">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card childrens-room">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card office">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card entryway">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card bathroom">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card patio">
+        <p class="category-title"></p>
+      </li>
+      <li class="category-card decor">
+        <p class="category-title"></p>
+      </li>
+    </ul>
+    <ul class="furniture-list"></ul>
+    <div class="loader-more-container">
+      <span class="loader-more hidden"></span>
+    </div>
+    <button class="load-more-btn hidden" type="button">Показати ще</button>
+  </div>
+</section>
+
+      <section class="about" id="about">
+  <div class="container about-case">
+    <div class="about-info">
+      <h2 class="about-title">Про Меблерію</h2>
+      <p class="about-text">
+        У Меблерії ми прагнемо створювати затишок та функціональність у кожному
+        домі. Наша місія - пропонувати високоякісні меблі, що поєднують у собі
+        сучасний дизайн, довговічність та доступність. Ми віримо, що ідеальний
+        інтер'єр починається з правильних меблів.
+      </p>
+    </div>
+    <div class="about-img">
+      <picture class="about-picture">
+        <source
+          media="(min-width: 1440px)"
+          srcset="/project-group-11S/assets/about-us-desk-_ZdfsWv4.webp 1x, /project-group-11S/assets/about-us-desk@2x-D_YUg2MD.webp 2x"
+        />
+        <source
+          media="(min-width: 768px)"
+          srcset="/project-group-11S/assets/about-us-tablet-DUhi4k8t.webp 1x, /project-group-11S/assets/about-us-tablet@2x-B-GXsy5r.webp 2x"
+        />
+        <source
+          media="(max-width: 767px)"
+          srcset="/project-group-11S/assets/about-us-BskN3hu9.webp 1x, /project-group-11S/assets/about-us@2x-BEbEpLYn.webp 2x"
+        />
+        <img
+          class="about-img"
+          src="/project-group-11S/assets/about-us-BskN3hu9.webp"
+          width="335"
+          height="436"
+          alt="About Us"
+        />
+      </picture>
+    </div>
+  </div>
+</section>
+
+      <section class="faq" id="faq-section">
+      <div class="container faq-case accordion-container">
+        <h2 class="faq-title">Часті питання</h2>
+
+        <div class="accordion" id="faq" data-accordion data-close-others>
+          <div class="ac ac-first">
+            <h3 class="ac-header">
+              <button class="ac-trigger">
+                Як здійснюється доставка меблів?
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p>
+                Ми доставляємо замовлення по всій Україні через надійні служби.
+                Термін доставки зазвичай складає 3–7 днів залежно від регіону.
+              </p>
+            </div>
+          </div>
+
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger">
+                Чи є можливість вибрати колір або матеріал?
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p>
+                Так, у багатьох моделях доступні варіанти оббивки та кольорів.
+                Усі доступні опції вказані на сторінці товару.
+              </p>
+            </div>
+          </div>
+
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger">
+                Чи можна повернути товар, якщо він не підійшов?
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p>
+                Так, ви можете повернути товар протягом 14 днів, якщо він не був
+                у користуванні та збережений у первинному вигляді.
+              </p>
+            </div>
+          </div>
+
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger">
+                Чи надаєте ви послугу збирання меблів?
+              </button>
+            </h3>
+            <div class="ac-panel">
+              <p>
+                Так, під час оформлення замовлення можна обрати послугу
+                збирання. Наші майстри зберуть меблі у зручний для вас час.
+              </p>
+            </div>
+          </div>
+
+          <div class="ac">
+            <h3 class="ac-header">
+              <button class="ac-trigger">Як здійснити оплату?</button>
+            </h3>
+            <div class="ac-panel">
+              <p>
+                Ми приймаємо оплату карткою онлайн, банківським переказом або
+                післяплатою при отриманні.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </section>
+      <section
+  class="modal visually-hidden"
+  role="dialog"
+  aria-labelledby="modal-title"
+>
+  <div class="modal_container">
+    <button class="modal_close" aria-label="Закрити модальне вікно">×</button>
+
+    <article class="modal_content">
+      <figure class="modal_main-image">
+        <img class="modal-img" src="" alt="" />
+      </figure>
+      <div class="modal_thumbnails"></div>
+
+      <div class="modal_details">
+    <h2 id="modal-title" class="modal_title"></h2>
+    <p class="modal_category"></p>
+    <p class="modal_price"></p>
+    <div class="modal_rate"></div>
+    <div class="modal_colors">
+      <p class="modal_colors-title">Колір</p>
+      <div class="color-checkboxes"></div>
+    </div>
+    <p class="modal_description"></p>
+    <p class="modal_sizes"></p>
+    <button type="button" class="modal_order-btn">Перейти до замовлення</button>
+    </article>
+  </div>
+</section>
+
+    </main>
+    <footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <a href="/">
+        <svg class="footer-logo-svg" width="221" height="50">
+          <use href="/project-group-11S/assets/icons-BHc1iuBr.svg#icon-Frame-1"></use>
+        </svg>
+      </a>
+    </div>
+
+    <ul class="nav">
+      <li class="footer-nav-item">
+        <a href="#our-furniture-section">Наші меблі</a>
+      </li>
+      <li class="footer-nav-item"><a href="#about">Про нас</a></li>
+      <li class="footer-nav-item"><a href="#faq-section">Часті питання</a></li>
+      <li class="footer-nav-item"><a href="#reviews">Відгуки</a></li>
+    </ul>
+    <div class="footer-socials">
+      <a href="#" class="footer-social-link">
+        <svg class="footer-social-icon" width="25" height="25">
+          <use href="/project-group-11S/assets/icons-BHc1iuBr.svg#icon-youtube"></use>
+        </svg>
+      </a>
+      <a href="#" class="footer-social-link">
+        <svg class="footer-social-icon" width="25" height="25">
+          <use href="/project-group-11S/assets/icons-BHc1iuBr.svg#icon-instagram"></use>
+        </svg>
+      </a>
+      <a href="#" class="footer-social-link">
+        <svg class="footer-social-icon" width="25" height="25">
+          <use href="/project-group-11S/assets/icons-BHc1iuBr.svg#icon-facebook"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="footer-copyright">
+      <p class="copyright-text">&copy; 2023. RawuMe. Всі права захищені</p>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="./js/hero.js"></script>
   </body>
 </html>
