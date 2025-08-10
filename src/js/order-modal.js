@@ -115,32 +115,33 @@ function resetForm() {
 //     });
 //   }
 // }
-async function handleFormSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-  const data = {
-    name: formData.get('user-name'),
-    phone: formData.get('user-phone'),
-    comment: formData.get('user-comment'),
-    furnitureId,
-    marker: markerValue,
-  };
-  try {
-    iziToast.success({
-      title: 'Успіх',
-      message: 'Форма успішно відправлена',
-      position: 'topRight',
-    });
-    closeModal();
-  } catch (error) {
-    iziToast.error({
-      title: 'Помилка',
-      message: 'Щось пішло не так ',
-      position: 'topRight',
-    });
-  }
-}
+
+// async function handleFormSubmit(e) {
+//   e.preventDefault();
+//   const form = e.target;
+//   const formData = new FormData(form);
+//   const data = {
+//     name: formData.get('user-name'),
+//     phone: formData.get('user-phone'),
+//     comment: formData.get('user-comment'),
+//     furnitureId,
+//     marker: markerValue,
+//   };
+//   try {
+//     iziToast.success({
+//       title: 'Успіх',
+//       message: 'Форма успішно відправлена',
+//       position: 'topRight',
+//     });
+//     closeModal();
+//   } catch (error) {
+//     iziToast.error({
+//       title: 'Помилка',
+//       message: 'Щось пішло не так ',
+//       position: 'topRight',
+//     });
+//   }
+// }
 
 export function toggleModal(open = true, id = null, marker = null) {
   const backdrop = document.querySelector('.backdrop');
