@@ -74,9 +74,49 @@ function resetForm() {
   }
 }
 
+// async function handleFormSubmit(e) {
+//   e.preventDefault();
+
+//   const form = e.target;
+//   const formData = new FormData(form);
+//   const data = {
+//     name: formData.get('user-name'),
+//     phone: formData.get('user-phone'),
+//     comment: formData.get('user-comment'),
+//     furnitureId,
+//     marker: markerValue,
+//   };
+
+//   try {
+//     const response = await fetch('/orders', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(data),
+//     });
+
+//     if (response.ok) {
+//       iziToast.success({
+//         title: 'Успіх',
+//         message: 'Ваше замовлення успішно відправлено!',
+//         position: 'topRight',
+//       });
+//       closeModal();
+//     } else {
+//       const errorData = await response.json();
+//       throw new Error(errorData.message || 'Помилка сервера');
+//     }
+//   } catch (error) {
+//     iziToast.error({
+//       title: 'Помилка',
+//       message: error.message || 'Не вдалося відправити форму',
+//       position: 'topRight',
+//     });
+//   }
+// }
 async function handleFormSubmit(e) {
   e.preventDefault();
-
   const form = e.target;
   const formData = new FormData(form);
   const data = {
@@ -86,31 +126,17 @@ async function handleFormSubmit(e) {
     furnitureId,
     marker: markerValue,
   };
-
   try {
-    const response = await fetch('/orders', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
+    iziToast.success({
+      title: 'Успіх',
+      message: 'Форма успішно відправлена',
+      position: 'topRight',
     });
-
-    if (response.ok) {
-      iziToast.success({
-        title: 'Успіх',
-        message: 'Ваше замовлення успішно відправлено!',
-        position: 'topRight',
-      });
-      closeModal();
-    } else {
-      const errorData = await response.json();
-      throw new Error(errorData.message || 'Помилка сервера');
-    }
+    closeModal();
   } catch (error) {
     iziToast.error({
       title: 'Помилка',
-      message: error.message || 'Не вдалося відправити форму',
+      message: 'Щось пішло не так ',
       position: 'topRight',
     });
   }
