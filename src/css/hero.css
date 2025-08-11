@@ -15,7 +15,6 @@ html {
   background-repeat: no-repeat;
 }
 
-/* Retina для мобильных */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
     background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
@@ -66,10 +65,9 @@ html {
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
 }
 .hero__button:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
-/* Планшет */
 @media only screen and (min-width: 768px) {
   .hero {
     min-height: 440px;
@@ -89,7 +87,6 @@ html {
   }
 }
 
-/* Retina для планшета */
 @media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
@@ -98,7 +95,6 @@ html {
   }
 }
 
-/* Десктоп */
 @media only screen and (min-width: 1440px) {
   .hero {
     min-height: 507px;
@@ -110,7 +106,6 @@ html {
   }
 }
 
-/* Retina для десктопа */
 @media only screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .hero {

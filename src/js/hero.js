@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const button = document.querySelector('.hero__button');
-  const target = document.querySelector('#reviews');
+  const target = document.querySelector('#review');
 
   if (button && target) {
     button.addEventListener('click', () => {
