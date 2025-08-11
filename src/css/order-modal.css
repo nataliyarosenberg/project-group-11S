@@ -136,8 +136,12 @@
 
 .modal-input:focus,
 .modal-texarea:focus {
-  border: 1px solid rgba(8, 12, 9, 0.4);
+  border: 1px solid var(--color-madang);
   outline: none;
+}
+.modal-input:focus::placeholder,
+.modal-texarea:focus::placeholder{
+  color: var(--color-madang);
 }
 
 /* Button */
