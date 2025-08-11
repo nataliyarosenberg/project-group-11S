@@ -1,7 +1,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 .hero {
   position: relative;
   display: flex;
@@ -15,7 +14,10 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* Retina для мобильных */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
@@ -23,16 +25,13 @@ html {
       url('../images/hero/bg-m-2x.webp');
   }
 }
-
 .hero__container {
   width: 100%;
 }
-
 .hero__content {
   position: relative;
   padding: 156px 0;
 }
-
 .hero__title {
   font-weight: 600;
   font-size: 40px;
@@ -41,7 +40,6 @@ html {
   text-align: left;
   margin-bottom: 24px;
 }
-
 .hero__text {
   font-weight: 400;
   font-size: 16px;
@@ -50,7 +48,6 @@ html {
   margin-bottom: 32px;
   max-width: 335px;
 }
-
 .hero__button {
   display: inline-block;
   width: 100%;
@@ -66,17 +63,18 @@ html {
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: opacity 0.3s ease;
-
   box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05),
     inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15),
     inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
 }
-
 .hero__button:hover {
   opacity: 0.8;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* Планшет */
 @media only screen and (min-width: 768px) {
   .hero {
@@ -84,21 +82,25 @@ html {
     background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
       url('../images/hero/bg-tab-1x.webp');
   }
-
   .hero__content {
     padding: 64px 0;
     max-width: 562px;
   }
-
   .hero__title {
     font-size: 56px;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
   .hero__button {
     width: auto;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* Retina для планшета */
 @media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 768px) and (min-resolution: 192dpi) {
@@ -107,7 +109,10 @@ html {
       url('../images/hero/bg-tab-2x.webp');
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* Десктоп */
 @media only screen and (min-width: 1440px) {
   .hero {
@@ -115,12 +120,14 @@ html {
     background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
       url('../images/hero/bg-w-1x.webp');
   }
-
   .hero__content {
     padding: 120px 0;
   }
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 /* Retina для десктопа */
 @media only screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 1440px) and (min-resolution: 192dpi) {

@@ -1,0 +1,54 @@
+<div id="order-backdrop" class="backdrop" aria-hidden="true">
+  <div
+    class="modal-order"
+    role="dialog"
+    aria-labelledby="order-title"
+    aria-modal="true"
+  >
+    <button class="modal-button-close" aria-label="Закрити модальне вікно">
+      ×
+    </button>
+
+    <h2 class="title-order" id="order-title">
+      Замовити зворотний <br />зв’язок
+    </h2>
+
+    <form class="modal-form" novalidate>
+      <div class="modal-div-input_label">
+        <label class="modal-label" for="user-name">Ім’я*</label>
+        <input
+          class="modal-input"
+          id="user-name"
+          name="user-name"
+          type="text"
+          placeholder="Дмитро"
+          required
+        />
+      </div>
+
+      <div class="modal-div-input_label">
+        <label class="modal-label" for="user-phone">Телефон*</label>
+        <input
+          class="modal-input"
+          id="user-phone"
+          name="user-phone"
+          type="tel"
+          placeholder="+38 (099) 123 22 11"
+          required
+        />
+      </div>
+
+      <div class="modal-div-input_label">
+        <label class="modal-label" for="user-comment">Коментар</label>
+        <textarea
+          class="modal-texarea"
+          id="user-comment"
+          name="user-comment"
+          placeholder="Type your message..."
+        ></textarea>
+      </div>
+
+      <button class="modal-btn" type="submit">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
