@@ -68,14 +68,14 @@
   fill: #080c09;
   pointer-events: none;
 }
-.modal-button-close:hover,
+/* .modal-button-close:hover,
 .modal-button-close:focus-visible {
   background: #404bbf;
 }
 .modal-button-close:hover .svg-close,
 .modal-button-close:focus-visible .svg-close {
   fill: #fff;
-}
+} */
 
 /* Title */
 .title-order {
@@ -136,8 +136,12 @@
 
 .modal-input:focus,
 .modal-texarea:focus {
-  border: 1px solid rgba(8, 12, 9, 0.4);
+  border: 1px solid var(--color-madang);
   outline: none;
+}
+.modal-input:focus::placeholder,
+.modal-texarea:focus::placeholder{
+  color: var(--color-madang);
 }
 
 /* Button */

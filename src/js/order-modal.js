@@ -1,4 +1,3 @@
-// /js/order-modal.js
 import modalHtml from '../partials/order-modal.html?raw'; // vite raw import
 import iconSprite from '../img/icons.svg';
 import iziToast from 'izitoast';
@@ -9,7 +8,6 @@ let markerValue = null;
 
 export async function loadOrderModal() {
   try {
-    // Inject SVG sprite once so <use href="#icon-x-icon"> works
     if (!document.getElementById('svg-sprite')) {
       const response = await fetch(iconSprite);
       const svgText = await response.text();
@@ -23,7 +21,6 @@ export async function loadOrderModal() {
       document.body.prepend(div);
     }
 
-    // Inject modal markup once
     if (!document.getElementById('order-backdrop')) {
       document.body.insertAdjacentHTML('beforeend', modalHtml);
     }
@@ -32,23 +29,22 @@ export async function loadOrderModal() {
     const closeBtn = backdrop?.querySelector('.modal-button-close');
     const form = backdrop?.querySelector('.modal-form');
 
-    // Close on backdrop click
     backdrop?.addEventListener('click', e => {
       if (e.target === backdrop) closeModal();
     });
 
-    // Close on ESC only when open
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && backdrop?.classList.contains('is-open')) {
         closeModal();
       }
     });
 
-    // Close button
     closeBtn?.addEventListener('click', closeModal);
 
-    // Form submit
     form?.addEventListener('submit', handleFormSubmit);
+
+    addButtonInteractionStyles(backdrop);
+
   } catch (err) {
     console.error('Помилка завантаження модалки:', err);
   }
@@ -60,12 +56,34 @@ function closeModal() {
   backdrop.classList.remove('is-open');
   document.body.classList.remove('no-scroll');
   backdrop.querySelector('.modal-form')?.reset();
+  furnitureId = null;
+  markerValue = null;
+}
+
+function validateForm(data) {
+  if (!data.name || data.name.length < 2) {
+    throw new Error('Імʼя має містити щонайменше 2 символи');
+  }
+  if (!/^\+?\d{10,15}$/.test(data.phone)) {
+    throw new Error('Введіть коректний номер телефону');
+  }
+}
+
+async function fakePostRequest(url, data) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() < 0.85) {
+        resolve({ ok: true, json: async () => ({ message: 'Замовлення успішно прийнято' }) });
+      } else {
+        reject(new Error('Сервер тимчасово недоступний'));
+      }
+    }, 800);
+  });
 }
 
 async function handleFormSubmit(e) {
   e.preventDefault();
 
-  // Collect values
   const form = e.target;
   const data = {
     name: form.elements['user-name']?.value?.trim() || '',
@@ -76,14 +94,21 @@ async function handleFormSubmit(e) {
   };
 
   try {
-    // TODO: swap this for your real POST if needed
-    // await fetch('/orders', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+    validateForm(data);
+
+    const res = await fakePostRequest('/orders', data);
+
+    if (!res.ok) {
+      const errData = await res.json().catch(() => ({}));
+      throw new Error(errData?.message || 'Помилка запиту');
+    }
 
     iziToast.success({
       title: 'Успіх',
       message: 'Форма успішно відправлена',
       position: 'topRight',
     });
+
     closeModal();
   } catch (error) {
     iziToast.error({
@@ -105,27 +130,29 @@ export function toggleModal(open = true, id = null, marker = null) {
     furnitureId = id;
     markerValue = marker;
 
-    // Focus first input for accessibility
     const firstInput = backdrop.querySelector('#user-name');
     firstInput?.focus();
   }
 }
 
-/** Bridge: open order modal from product modal */
-export function initOrderModalBridge() {
-  document.addEventListener('open-order-modal', e => {
-    const { model, color } = e.detail || {};
-    toggleModal(true, null, 'product-modal');
+function addButtonInteractionStyles(container) {
+  if (!container) return;
+  const buttons = container.querySelectorAll('button');
 
-    const comment = document.getElementById('user-comment');
-    if (comment) {
-      comment.value = [model && `Модель: ${model}`, color && `Колір: ${color}`]
-        .filter(Boolean)
-        .join(', ');
-    }
+  buttons.forEach(button => {
+    button.style.cursor = 'pointer';
+
+    button.addEventListener('mouseenter', () => button.classList.add('hover'));
+    button.addEventListener('mouseleave', () => button.classList.remove('hover'));
+
+    button.addEventListener('focus', () => button.classList.add('focus'));
+    button.addEventListener('blur', () => button.classList.remove('focus'));
+
+    button.addEventListener('mousedown', () => button.classList.add('active'));
+    button.addEventListener('mouseup', () => button.classList.remove('active'));
+    button.addEventListener('mouseout', () => button.classList.remove('active'));
   });
 }
 
-// Call these once in your app bootstrap (e.g., main.js)
 loadOrderModal();
-initOrderModalBridge();
+// initOrderModalBridge(); // Видалено
