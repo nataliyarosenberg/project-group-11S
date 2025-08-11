@@ -1,3 +1,5 @@
+// /js/order-modal.js
+import modalHtml from '../partials/order-modal.html?raw'; // vite raw import
 import iconSprite from '../img/icons.svg';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
@@ -5,129 +7,78 @@ import 'izitoast/dist/css/iziToast.min.css';
 let furnitureId = null;
 let markerValue = null;
 
-// Функція для завантаження HTML модалки
 export async function loadOrderModal() {
   try {
-    // Додаємо SVG спрайт
+    // Inject SVG sprite once so <use href="#icon-x-icon"> works
     if (!document.getElementById('svg-sprite')) {
       const response = await fetch(iconSprite);
       const svgText = await response.text();
       const div = document.createElement('div');
+      div.id = 'svg-sprite';
       div.style.position = 'absolute';
       div.style.width = '0';
       div.style.height = '0';
       div.style.overflow = 'hidden';
-      div.id = 'svg-sprite';
       div.innerHTML = svgText;
       document.body.prepend(div);
     }
 
-    const response = await fetch('./partials/order-modal.html');
-    const html = await response.text();
-    document.body.insertAdjacentHTML('beforeend', html);
-
-    const backdrop = document.querySelector('.backdrop');
-    const closeBtn = document.querySelector('.modal-button-close');
-    const form = document.querySelector('.modal-form');
-
-    if (backdrop) {
-      // Закриття по кліку на бекдроп
-      backdrop.addEventListener('click', e => {
-        if (e.target === backdrop) {
-          closeModal();
-        }
-      });
-
-      // Закриття по ESC
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape' && backdrop.classList.contains('is-open')) {
-          closeModal();
-        }
-      });
+    // Inject modal markup once
+    if (!document.getElementById('order-backdrop')) {
+      document.body.insertAdjacentHTML('beforeend', modalHtml);
     }
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', closeModal);
-    }
+    const backdrop = document.getElementById('order-backdrop');
+    const closeBtn = backdrop?.querySelector('.modal-button-close');
+    const form = backdrop?.querySelector('.modal-form');
 
-    if (form) {
-      form.addEventListener('submit', handleFormSubmit);
-    }
-  } catch (error) {
-    console.error('Помилка завантаження модалки:', error);
+    // Close on backdrop click
+    backdrop?.addEventListener('click', e => {
+      if (e.target === backdrop) closeModal();
+    });
+
+    // Close on ESC only when open
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && backdrop?.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    // Close button
+    closeBtn?.addEventListener('click', closeModal);
+
+    // Form submit
+    form?.addEventListener('submit', handleFormSubmit);
+  } catch (err) {
+    console.error('Помилка завантаження модалки:', err);
   }
 }
 
 function closeModal() {
-  const backdrop = document.querySelector('.backdrop');
-  if (backdrop) {
-    backdrop.classList.remove('is-open');
-    document.body.style.overflow = '';
-    resetForm();
-  }
+  const backdrop = document.getElementById('order-backdrop');
+  if (!backdrop) return;
+  backdrop.classList.remove('is-open');
+  document.body.classList.remove('no-scroll');
+  backdrop.querySelector('.modal-form')?.reset();
 }
-
-function resetForm() {
-  const form = document.querySelector('.modal-form');
-  if (form) {
-    form.reset();
-  }
-}
-
-// async function handleFormSubmit(e) {
-//   e.preventDefault();
-
-//   const form = e.target;
-//   const formData = new FormData(form);
-//   const data = {
-//     name: formData.get('user-name'),
-//     phone: formData.get('user-phone'),
-//     comment: formData.get('user-comment'),
-//     furnitureId,
-//     marker: markerValue,
-//   };
-
-//   try {
-//     const response = await fetch('/orders', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//       body: JSON.stringify(data),
-//     });
-
-//     if (response.ok) {
-//       iziToast.success({
-//         title: 'Успіх',
-//         message: 'Ваше замовлення успішно відправлено!',
-//         position: 'topRight',
-//       });
-//       closeModal();
-//     } else {
-//       const errorData = await response.json();
-//       throw new Error(errorData.message || 'Помилка сервера');
-//     }
-//   } catch (error) {
-//     iziToast.error({
-//       title: 'Помилка',
-//       message: error.message || 'Не вдалося відправити форму',
-//       position: 'topRight',
-//     });
-//   }
-// }
 
 async function handleFormSubmit(e) {
   e.preventDefault();
+
+  // Collect values
   const form = e.target;
-  const formData = new FormData(form);
   const data = {
-    name: formData.get('user-name'),
-    phone: formData.get('user-phone'),
-    comment: formData.get('user-comment'),
+    name: form.elements['user-name']?.value?.trim() || '',
+    phone: form.elements['user-phone']?.value?.trim() || '',
+    comment: form.elements['user-comment']?.value?.trim() || '',
     furnitureId,
     marker: markerValue,
   };
+
   try {
+    // TODO: swap this for your real POST if needed
+    // await fetch('/orders', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+
     iziToast.success({
       title: 'Успіх',
       message: 'Форма успішно відправлена',
@@ -137,41 +88,44 @@ async function handleFormSubmit(e) {
   } catch (error) {
     iziToast.error({
       title: 'Помилка',
-      message: 'Щось пішло не так ',
+      message: error?.message || 'Щось пішло не так',
       position: 'topRight',
     });
   }
 }
 
 export function toggleModal(open = true, id = null, marker = null) {
-  const backdrop = document.querySelector('.backdrop');
-  if (backdrop) {
-    backdrop.classList.toggle('is-open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
+  const backdrop = document.getElementById('order-backdrop');
+  if (!backdrop) return;
 
-    if (open) {
-      furnitureId = id;
-      markerValue = marker;
-    }
+  backdrop.classList.toggle('is-open', open);
+  document.body.classList.toggle('no-scroll', open);
+
+  if (open) {
+    furnitureId = id;
+    markerValue = marker;
+
+    // Focus first input for accessibility
+    const firstInput = backdrop.querySelector('#user-name');
+    firstInput?.focus();
   }
 }
 
-//     // Додаємо обробники подій
-//     const backdrop = document.querySelector('.backdrop');
-//     if (backdrop) {
-//       backdrop.addEventListener('click', () => {
-//         backdrop.classList.remove('is-open');
-//       });
-//     }
-//   } catch (error) {
-//     console.error('Помилка завантаження модалки:', error);
-//   }
-// }
+/** Bridge: open order modal from product modal */
+export function initOrderModalBridge() {
+  document.addEventListener('open-order-modal', e => {
+    const { model, color } = e.detail || {};
+    toggleModal(true, null, 'product-modal');
 
-// // Функція для відкриття/закриття модалки
-// export function toggleModal(open = true) {
-//   const backdrop = document.querySelector('.backdrop');
-//   if (backdrop) {
-//     backdrop.classList.toggle('is-open', open);
-//   }
-// }
+    const comment = document.getElementById('user-comment');
+    if (comment) {
+      comment.value = [model && `Модель: ${model}`, color && `Колір: ${color}`]
+        .filter(Boolean)
+        .join(', ');
+    }
+  });
+}
+
+// Call these once in your app bootstrap (e.g., main.js)
+loadOrderModal();
+initOrderModalBridge();
