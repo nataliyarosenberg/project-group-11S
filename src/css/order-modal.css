@@ -68,14 +68,14 @@
   fill: #080c09;
   pointer-events: none;
 }
-.modal-button-close:hover,
+/* .modal-button-close:hover,
 .modal-button-close:focus-visible {
   background: #404bbf;
 }
 .modal-button-close:hover .svg-close,
 .modal-button-close:focus-visible .svg-close {
   fill: #fff;
-}
+} */
 
 /* Title */
 .title-order {
