@@ -6,14 +6,14 @@ import 'css-star-rating/css/star-rating.css';
 // document.addEventListener('DOMContentLoaded', () => {
 //   loadOrderModal();
 
-  //   //  відкрити модалку по кліку на кнопку (якщо є)
-  //   const openModalBtn = document.querySelector('[data-modal-open]');
-  //   if (openModalBtn) {
-  //     openModalBtn.addEventListener('click', () => toggleModal(true));
-  //   }
-  // });
+//   //  відкрити модалку по кліку на кнопку (якщо є)
+//   const openModalBtn = document.querySelector('[data-modal-open]');
+//   if (openModalBtn) {
+//     openModalBtn.addEventListener('click', () => toggleModal(true));
+//   }
+// });
 
-  // Приклад відкриття модалки з даними
+// Приклад відкриття модалки з даними
 //   document.addEventListener('click', e => {
 //     if (e.target.closest('[data-modal-open]')) {
 //       const furnitureId = e.target.closest('[data-modal-open]').dataset.id;
@@ -23,4 +23,4 @@ import 'css-star-rating/css/star-rating.css';
 //   });
 // });
 
-initAccordion();
+// initAccordion();

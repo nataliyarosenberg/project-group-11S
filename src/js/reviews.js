@@ -114,12 +114,12 @@ try {
         const isActive = index === activeIndex ? 'icon-active' : '';
         return `
         <svg class="icon icon-Dot ${className}" width="8" height="8">
-          <use href="../images/reviews/icons.svg#icon-Dot"></use>
+          <use href="./images/reviews/icons.svg#icon-Dot"></use>
         </svg>
       `;
       },
-      bulletClass: 'icon-Dot', // Клас для всіх точок
-      bulletActiveClass: 'icon-active', // Клас для активної точки
+      bulletClass: 'icon-Dot',
+      bulletActiveClass: 'icon-active',
       dynamicBullets: false,
     },
     navigation: {
@@ -165,24 +165,6 @@ function applyHalfStarClass() {
     ratingEl.classList.remove(valueClass);
     ratingEl.classList.add(`value-${Math.floor(value)}`);
   });
-}
-
-function renderCustomBullets(total, maxBullets = 5) {
-  const container = document.querySelector('.reviews-actual-slide');
-  container.innerHTML = '';
-
-  const count = Math.min(total, maxBullets);
-
-  for (let i = 0; i < count; i++) {
-    const svg = `
-      <svg class="icon icon-Dot ${
-        i === 0 ? 'icon-active' : ''
-      }" width="8" height="8">
-        <use xlink:href="../images/reviews/icons.svg#icon-Dot"></use>
-      </svg>
-    `;
-    container.insertAdjacentHTML('beforeend', svg);
-  }
 }
 
 const prevBtn = document.querySelector('.before');
