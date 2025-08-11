@@ -92,8 +92,6 @@
   }
 }
 
-/*Меню*/
-
 .mobile-menu {
   width: 100%;
   position: fixed;
@@ -138,9 +136,6 @@
   align-items: center;
   text-decoration: none;
   color: #000;
-}
-
-.mobile-nav {
 }
 
 .mobile-nav-list {
