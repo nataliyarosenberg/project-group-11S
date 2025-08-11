@@ -20,3 +20,5 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 import { initAccordion } from './js/faq.js';
 initAccordion();
+
+

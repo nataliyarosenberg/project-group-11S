@@ -92,8 +92,6 @@
   }
 }
 
-/*Меню*/
-
 .mobile-menu {
   width: 100%;
   position: fixed;
@@ -140,9 +138,6 @@
   color: #000;
 }
 
-/* .mobile-nav {
-} */
-
 .mobile-nav-list {
   margin-bottom: 32px;
   padding: 0;
@@ -187,7 +182,7 @@
   opacity: 0.5;
 }
 
-@media only screen and (min-width: 768px) and (max-with: 1439px) {
+@media only screen and (min-width: 768px) {
   .logo-menu {
     display: none;
   }
