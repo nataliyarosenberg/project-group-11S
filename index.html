@@ -14,12 +14,11 @@
       referrerpolicy="no-referrer"
     />
 
-    
-  <script type="module" crossorigin src="/project-group-11S/index.js"></script>
-  <link rel="modulepreload" crossorigin href="/project-group-11S/assets/vendor-7WN_uEAT.js">
-  <link rel="stylesheet" crossorigin href="/project-group-11S/assets/vendor-DBhUhpMf.css">
-  <link rel="stylesheet" crossorigin href="/project-group-11S/assets/index-DdM1Cb0u.css">
-
+    <script type="module" crossorigin src="/project-group-11S/index.js"></script>
+    <link rel="modulepreload" crossorigin href="/project-group-11S/assets/vendor-PjITybrQ.js">
+    <link rel="stylesheet" crossorigin href="/project-group-11S/assets/vendor-rkC2qY_W.css">
+    <link rel="stylesheet" crossorigin href="/project-group-11S/assets/index-BfEqT14-.css">
+  </head>
   <body>
     <header class="section-header">
   <div class="container header-container">
@@ -43,7 +42,7 @@
             <a class="header-nav-link" href="#faq-section">Часті питання</a>
           </li>
           <li class="header-nav-item">
-            <a class="header-nav-link" href="#reviews">Відгуки</a>
+            <a class="header-nav-link" href="#review">Відгуки</a>
           </li>
         </ul>
       </nav>
@@ -97,7 +96,9 @@
         перетворять ваш простір. Наша продукція поєднує в собі елегантність та
         функціональність.
       </p>
-      <button class="hero__button">Що про нас думають</button>
+      <a href="#review"
+        ><button class="hero__button">Що про нас думають</button></a
+      >
     </div>
   </div>
 </section>
@@ -330,7 +331,6 @@
   </div>
 </section>
 
-      
     </main>
     <footer class="footer">
   <div class="container footer-container">
@@ -373,16 +373,22 @@
   </div>
 </footer>
 
-      <div class="backdrop">
-  <div class="modal-order">
-    <button class="modal-button-close" type="button">
-      <svg class="svg-close" width="32" height="32">
-        <use href="../img/icons.svg#icon-x-icon"></use>
-      </svg>
+    <div id="order-backdrop" class="backdrop" aria-hidden="true">
+  <div
+    class="modal-order"
+    role="dialog"
+    aria-labelledby="order-title"
+    aria-modal="true"
+  >
+    <button class="modal-button-close" aria-label="Закрити модальне вікно">
+      ×
     </button>
 
-    <h2 class="title-order">Замовити зворотний <br />зв’язок</h2>
-    <form class="modal-form">
+    <h2 class="title-order" id="order-title">
+      Замовити зворотний <br />зв’язок
+    </h2>
+
+    <form class="modal-form" novalidate>
       <div class="modal-div-input_label">
         <label class="modal-label" for="user-name">Ім’я*</label>
         <input
@@ -394,6 +400,7 @@
           required
         />
       </div>
+
       <div class="modal-div-input_label">
         <label class="modal-label" for="user-phone">Телефон*</label>
         <input
@@ -404,8 +411,8 @@
           placeholder="+38 (099) 123 22 11"
           required
         />
-        <!-- pattern="\+38\s?\(?0\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}" -->
       </div>
+
       <div class="modal-div-input_label">
         <label class="modal-label" for="user-comment">Коментар</label>
         <textarea
@@ -415,13 +422,11 @@
           placeholder="Type your message..."
         ></textarea>
       </div>
-      <button class="modal-btn">Надіслати заявку</button>
+
+      <button class="modal-btn" type="submit">Надіслати заявку</button>
     </form>
   </div>
 </div>
-
-    
-
 
 
   </body>
