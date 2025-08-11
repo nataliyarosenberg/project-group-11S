@@ -27,6 +27,7 @@
   gap: 16px;
   justify-content: space-between;
   margin-bottom: 104px;
+  overflow: hidden;
 }
 
 .third-review {
@@ -34,7 +35,7 @@
 }
 
 .reviews-item {
-  min-width: 280px;
+  min-width: 280px !important;
 }
 
 .reviews-text {
@@ -56,8 +57,13 @@
   line-height: 160%;
   letter-spacing: 0%;
 }
-
 .reviews-slider {
+  display: flex;
+  align-items: center; /* по вертикалі по центру */
+  justify-content: center; /* по горизонталі по центру */
+  gap: 20px; /* відстань між пагінацією і кнопками */
+}
+.reviews-swiper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -67,6 +73,15 @@
   display: flex;
   gap: 8px;
   width: 100px;
+}
+
+.reviews-actual-slide .swiper-pagination-bullet {
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.reviews-actual-slide .swiper-pagination-bullet-active {
+  opacity: 1;
 }
 
 .active-dot {
@@ -93,6 +108,10 @@
   opacity: 0.2;
 }
 
+.icon-Dot:hover {
+  cursor: pointer;
+}
+
 .icon-active {
   opacity: 1;
 }
@@ -104,6 +123,7 @@
 
 .icon-btn {
   background-color: #f2f2f2;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,10 +145,12 @@
   background-color: #6b0609;
 }
 
-.icon-btn:disabled {
-  background-color: #f2f2f2;
+.icon-btn.swiper-button-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+  background-color: #eee; /* або як в макеті */
 }
-
 .icon-btn:disabled .icon-slider {
   fill: rgba(8, 12, 9, 1);
 }
@@ -149,7 +171,7 @@
   }
 
   .reviews-item {
-    min-width: 341px;
+    min-width: 341px !important;
   }
 
   .reviews-title {
@@ -178,7 +200,7 @@
     display: block;
   }
   .reviews-item {
-    min-width: 421px;
+    min-width: 421px !important;
   }
 
   .reviews-text {
