@@ -14,11 +14,6 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
-/* Retina для мобильных */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
     background-image: linear-gradient(rgba(8, 12, 9, 0.6), rgba(8, 12, 9, 0.6)),
@@ -69,13 +64,9 @@ html {
     inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
 }
 .hero__button:hover {
-  opacity: 0.8;
+  opacity: 0.5;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> main
-/* Планшет */
 @media only screen and (min-width: 768px) {
   .hero {
     min-height: 440px;
@@ -89,19 +80,11 @@ html {
   .hero__title {
     font-size: 56px;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> main
   .hero__button {
     width: auto;
   }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> main
-/* Retina для планшета */
 @media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 768px) and (min-resolution: 192dpi) {
   .hero {
@@ -109,11 +92,7 @@ html {
       url('../images/hero/bg-tab-2x.webp');
   }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> main
-/* Десктоп */
 @media only screen and (min-width: 1440px) {
   .hero {
     min-height: 507px;
@@ -124,11 +103,7 @@ html {
     padding: 120px 0;
   }
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> main
-/* Retina для десктопа */
 @media only screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
   .hero {
