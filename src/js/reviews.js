@@ -34,57 +34,57 @@ try {
                 <div class="star-container">
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector-half"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-field-star"></use>
+                            <use href="./images/reviews/icons.svg#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector-half"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-field-star"></use>
+                            <use href="./images/reviews/icons.svg#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector-half"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-field-star"></use>
+                            <use href="./images/reviews/icons.svg#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector-half"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-field-star"></use>
+                            <use href="./images/reviews/icons.svg#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-Vector-half"></use>
+                            <use href="./images/reviews/icons.svg#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="../images/reviews/icons.svg#icon-field-star"></use>
+                            <use href="./images/reviews/icons.svg#icon-field-star"></use>
                         </svg>
                     </div>
                     </div>
