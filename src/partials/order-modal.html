@@ -1,13 +1,19 @@
-<div class="backdrop">
-  <div class="modal-order">
-    <button class="modal-button-close" type="button">
-      <svg class="svg-close" width="32" height="32">
-        <use href="../img/icons.svg#icon-x-icon"></use>
-      </svg>
+<div id="order-backdrop" class="backdrop" aria-hidden="true">
+  <div
+    class="modal-order"
+    role="dialog"
+    aria-labelledby="order-title"
+    aria-modal="true"
+  >
+    <button class="modal-button-close" aria-label="Закрити модальне вікно">
+      ×
     </button>
 
-    <h2 class="title-order">Замовити зворотний <br />зв’язок</h2>
-    <form class="modal-form">
+    <h2 class="title-order" id="order-title">
+      Замовити зворотний <br />зв’язок
+    </h2>
+
+    <form class="modal-form" novalidate>
       <div class="modal-div-input_label">
         <label class="modal-label" for="user-name">Ім’я*</label>
         <input
@@ -19,6 +25,7 @@
           required
         />
       </div>
+
       <div class="modal-div-input_label">
         <label class="modal-label" for="user-phone">Телефон*</label>
         <input
@@ -29,8 +36,8 @@
           placeholder="+38 (099) 123 22 11"
           required
         />
-        <!-- pattern="\+38\s?\(?0\d{2}\)?[\s\-]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}" -->
       </div>
+
       <div class="modal-div-input_label">
         <label class="modal-label" for="user-comment">Коментар</label>
         <textarea
@@ -40,7 +47,8 @@
           placeholder="Type your message..."
         ></textarea>
       </div>
-      <button class="modal-btn">Надіслати заявку</button>
+
+      <button class="modal-btn" type="submit">Надіслати заявку</button>
     </form>
   </div>
 </div>
