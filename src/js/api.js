@@ -10,6 +10,9 @@ const loadMoreBtn = document.querySelector(".load-more-btn");
 export let currentPage = 1;
 let totalPages = null;
 const limit = 8;
+// ініціація кеша для модалки
+window.allFurnitures = window.allFurnitures || [];
+// 
 
 export async function fetchCategories() {
     try {
@@ -83,8 +86,14 @@ export async function fetchProducts(page = 1, id) {
 }
 
 export function renderProducts(obj) {
-    const furnitures = obj.furnitures;
-    window.allFurnitures = furnitures;
+  const furnitures = obj.furnitures;
+  // збираємо всі товари для модалки
+    window.allFurnitures = [
+  ...new Map(
+    [...window.allFurnitures, ...furnitures].map(item => [item._id, item])
+  ).values()
+  ];
+  // 
   const markup = furnitures.map(product => {
     const { _id, name, description, price, images } = product;
     return `
@@ -160,5 +169,8 @@ export function hideLoadMoreButton() {
 }
 
 function clearProducts() {
-    furnituresListContainer.innerHTML = "";
+  furnituresListContainer.innerHTML = "";
+  // очіщення кешу при зміні категорії
+  window.allFurnitures = []; 
+  // 
 }
