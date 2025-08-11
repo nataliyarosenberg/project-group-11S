@@ -1,4 +1,4 @@
-import { loadOrderModal, toggleModal } from './js/order-modal.js';
+// import { loadOrderModal, toggleModal } from './js/order-modal.js';
 import { initAccordion } from './js/faq.js';
 
 // Завантажуємо модалку при завантаженні сторінки
