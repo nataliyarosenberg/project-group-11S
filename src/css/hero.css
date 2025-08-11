@@ -14,6 +14,7 @@ html {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 /* Retina для мобильных */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .hero {
@@ -67,6 +68,7 @@ html {
 .hero__button:hover {
   opacity: 0.8;
 }
+
 /* Планшет */
 @media only screen and (min-width: 768px) {
   .hero {
@@ -81,10 +83,12 @@ html {
   .hero__title {
     font-size: 56px;
   }
+
   .hero__button {
     width: auto;
   }
 }
+
 /* Retina для планшета */
 @media only screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 768px) and (min-resolution: 192dpi) {
@@ -93,6 +97,7 @@ html {
       url('../images/hero/bg-tab-2x.webp');
   }
 }
+
 /* Десктоп */
 @media only screen and (min-width: 1440px) {
   .hero {
@@ -104,6 +109,7 @@ html {
     padding: 120px 0;
   }
 }
+
 /* Retina для десктопа */
 @media only screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min-width: 1440px) and (min-resolution: 192dpi) {
