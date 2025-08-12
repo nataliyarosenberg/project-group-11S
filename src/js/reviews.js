@@ -7,6 +7,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import spritePath from "./images/reviews/iconsa.svg";
 
+import 'css-star-rating/css/star-rating.css';
+
 let reviews = document.querySelector('.swiper-wrapper');
 
 let swiper;

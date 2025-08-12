@@ -41,18 +41,18 @@
 
 .modal_close {
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 16px;
+    right: 16px;
     width: 32px;
     height: 32px;
-    display: inline-block;
-    font-size: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: 0;
     border-radius: 8px;
     cursor: pointer;
     color: #080c09;
-    -webkit-tap-highlight-color: transparent;
     transition: background-color .2s ease, transform .06s ease;
     z-index: 50;
 }
@@ -63,7 +63,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 14px;
+    width: 16px;
     height: 2px;
     background: currentColor;
     border-radius: 1px;
@@ -142,8 +142,12 @@
 }
 
 .modal_title {
+    font-family: "Raleway", sans-serif;
     font-weight: 700;
-    font-size: clamp(20px, 3.6vw, 24px);
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+    color: #080c09;
     margin: 24px 0 4px;
 }
 
@@ -250,35 +254,41 @@
 }
 
 .modal_order-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 44px;
-    padding: 0 16px;
-    background-color: var(--color-madang, #6b0609);
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    border: 0;
-    border-radius: 9999px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transition: background-color .2s ease, transform .06s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+  border-radius: 100px;
+  background-color: #6b0609;
+  background: linear-gradient(180deg, #7b1215 0%, #6b0609 100%);
+  border: 0;
+  box-shadow:
+        0 1px 2px 0 rgba(8, 12, 9, 0.05),
+        inset 0 -2px 1px 0 rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+        inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background-clip: padding-box;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal_order-btn:hover {
-    background-color: var(--color-madang-dark, #550407);
-}
-
-.modal_order-btn:active {
-    transform: translateY(1px);
-    cursor: none;
+.modal_order-btn:hover,
+.modal_order-btn:focus {
+  opacity: 0.5;
 }
 
 .modal_order-btn:focus-visible {
-    outline: 3px solid var(--color-madang, #6b0609);
-    outline-offset: 3px;
+  outline: 3px solid #6b0609;
+  outline-offset: 3px;
+}
+
+.modal_order-btn:active {
+  transform: translateY(1px);
 }
 
 @media (min-width:375px) {
@@ -331,9 +341,11 @@
         aspect-ratio: 312 / 197;
         object-fit: cover;
     }
+    
 
     .modal_title {
         margin-top: 24px;
+        font-size: 40px;
     }
 
     .modal_order-btn {
@@ -345,8 +357,8 @@
     }
 
     .modal_close {
-        top: 25px;
-        right: 25px;
+        top: 16px;
+        right: 16px;
         z-index: 50;
         position: absolute;
     }
@@ -358,10 +370,14 @@
         padding: 40px;
     }
 
+    .modal {
+        --gallery-w: 640px;
+    }
+
     .modal_content {
         display: grid;
-        grid-template-columns: 640px 1fr;
         grid-template-rows: auto auto;
+        grid-template-columns: 640px minmax(0, calc(100% - 640px - 40px));
         column-gap: 40px;
         row-gap: 16px;
     }
@@ -403,47 +419,34 @@
         display: grid;
         align-content: start;
         row-gap: 12px;
+        min-width: 0;
     }
 
-    .modal_title {
-        margin: 0 0 8px;
-    }
-
-    .modal_category {
-        margin: 0 0 8px;
-    }
-
-    .modal_price {
-        margin: 0 0 12px;
-    }
-
-    .modal_rate {
-        margin: 0 0 16px;
-    }
-
-    .modal_colors {
-        margin: 0 0 16px;
-    }
-
-    .modal_description {
-        margin: 0 0 12px;
-    }
-
+    .modal_title,
+    .modal_category,
+    .modal_price,
+    .modal_rate,
+    .modal_colors,
+    .modal_description,
     .modal_sizes {
-        margin: 0 0 16px;
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
-
+    .modal_title {
+        margin-top: 24px;
+        font-size: 40px;
+}
     .modal_order-btn {
         justify-self: center;
-        width: 360px;
-        height: 52px;
-        max-width: none;
+        width: 310px;
+        height: 46px;
+        max-width: 100%;
         margin-top: 8px;
     }
 
     .modal_close {
-        top: 25px;
-        right: 25px;
+        top: 16px;
+        right: 16px;
         z-index: 50;
     }
 }
