@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 72px;
 }
 
 .header-logo {
@@ -161,7 +162,7 @@
 
 .mobile-btn {
   display: block;
-  min-width: 335px;
+  width: 100%;
   padding: 8px 20px;
   font-weight: 500;
   font-size: 16px;
@@ -206,6 +207,10 @@
 
   .mobile-menu-content {
     padding: 32px;
+  }
+
+  .mobile-menu-close {
+    padding-top: 18.39px;
   }
 
   .mobile-nav {
