@@ -1,8 +1,4 @@
-.section-header {
-  height: 69px;
-} 
-.container{
-  height: 69px}
+
 
 .header-container {
   display: flex;
@@ -190,6 +186,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .header-container {
+    height: 69px;
+  }
+  
   .logo-menu {
     display: none;
   }
@@ -233,9 +233,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .section-header {
-    height: 69px;
-  }
+ 
   .header-container {
     height: 69px;
     display: flex;
