@@ -38,7 +38,7 @@
 }
 
 .icon-slider {
-  fill: black;
+  fill: black!important;
 }
 
 .reviews-item {
