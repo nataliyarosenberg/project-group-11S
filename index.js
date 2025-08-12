@@ -139,7 +139,7 @@ import{a as E,i as f,A as G,S as K,N as Q,P as Z,b as J}from"./assets/vendor-U7R
           </div>
         `).join("");qe.insertAdjacentHTML("beforeend",s),Ce(),p=new K(".reviews-swiper",{modules:[Q,Z,J],infinite:!1,slidesPerView:3,direction:"horizontal",loop:!1,pagination:{el:".reviews-actual-slide",clickable:!0,renderBullet:function(o,n){const r=this.activeIndex||0,c=o===r?"icon-active":"";return`
         <svg class="icon icon-Dot ${n}" width="8" height="8">
-          <use href="./images/reviews/iconsa.svg#icon-Dot"></use>
+          <use href="${i}#icon-Dot"></use>
         </svg>
       `},bulletClass:"icon-Dot",bulletActiveClass:"icon-active",dynamicBullets:!1},navigation:{nextEl:".after",prevEl:".before"},scrollbar:{el:".swiper-scrollbar",draggable:!0}}),B(),p.on("slideChange",()=>{B()})}catch{}finally{}function Me(e){return e>=3.3&&e<=3.7?3.5:e>=3.8&&e<=4.2?4:Math.round(e*2)/2}function Ce(){document.querySelectorAll(".rating").forEach(t=>{const s=Array.from(t.classList).find(n=>n.startsWith("value-"));if(!s)return;const o=parseFloat(s.replace("value-",""));console.log("Original value:",o),o%1!==0&&t.classList.add("half"),t.classList.remove(s),t.classList.add(`value-${Math.floor(o)}`)})}const A=document.querySelector(".before"),_=document.querySelector(".after");function B(){p.isBeginning?A.classList.add("disabled"):A.classList.remove("disabled"),p.isEnd?_.classList.add("disabled"):_.classList.remove("disabled")}
 //# sourceMappingURL=index.js.map
