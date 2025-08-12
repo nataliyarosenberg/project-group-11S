@@ -117,7 +117,7 @@ try {
         const isActive = index === activeIndex ? 'icon-active' : '';
         return `
         <svg class="icon icon-Dot ${className}" width="8" height="8">
-          <use href="./images/reviews/iconsa.svg#icon-Dot"></use>
+          <use href="${spritePath}#icon-Dot"></use>
         </svg>
       `;
       },
