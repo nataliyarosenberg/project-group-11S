@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: space-between;
 }
+ .section-header {
+    height: 72px;
+  }
 
 .header-logo {
   display: flex;
@@ -27,6 +30,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+   .section-header {
+    height: 72px;
+  }
+  
   .menu-btn {
     display: none;
   }
@@ -183,6 +190,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+   .section-header {
+    height: 72px;
+  }
+  
   .logo-menu {
     display: none;
   }
