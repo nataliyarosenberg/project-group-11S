@@ -37,6 +37,10 @@
   display: none;
 }
 
+.icon-slider {
+  fill: black;
+}
+
 .reviews-item {
   min-width: 280px !important;
 }
