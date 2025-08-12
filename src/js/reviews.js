@@ -37,57 +37,57 @@ try {
                 <div class="star-container">
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector"></use>
+                            <use href="${spritePath}#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector-half"></use>
+                            <use href="${spritePath}#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-field-star"></use>
+                            <use href="${spritePath}#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector"></use>
+                            <use href="${spritePath}#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector-half"></use>
+                            <use href="${spritePath}#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-field-star"></use>
+                            <use href="${spritePath}#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector"></use>
+                            <use href="${spritePath}#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector-half"></use>
+                            <use href="${spritePath}#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-field-star"></use>
+                            <use href="${spritePath}#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector"></use>
+                            <use href="${spritePath}#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector-half"></use>
+                            <use href="${spritePath}#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-field-star"></use>
+                            <use href="${spritePath}#icon-field-star"></use>
                         </svg>
                     </div>
                     <div class="star">
                         <svg class="icon icon-slider star-filled" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector"></use>
+                            <use href="${spritePath}#icon-Vector"></use>
                         </svg>
                         <svg class="icon icon-slider star-half" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-Vector-half"></use>
+                            <use href="${spritePath}#icon-Vector-half"></use>
                         </svg>
                         <svg class="icon icon-slider star-empty" width="13" height="13">
-                            <use href="./images/reviews/iconsa.svg#icon-field-star"></use>
+                            <use href="${spritePath}#icon-field-star"></use>
                         </svg>
                     </div>
                     </div>
