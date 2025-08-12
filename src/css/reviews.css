@@ -3,8 +3,11 @@
   font-family: 'Raleway', sans-serif;
   padding-top: 64px;
 }
-
-.reviews-title {
+.rating.value-5
+  .star-container
+  .star:nth-child(-n + 5)
+  svg.star-filled
+  .reviews-title {
   font-weight: 700;
   font-style: Bold;
   font-size: 36px;
@@ -48,6 +51,10 @@
   margin-top: 24px;
   min-width: 232px;
   padding-right: 48px;
+}
+.star-containers {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .reviews-reviewer {
@@ -164,6 +171,12 @@
 @media screen and (min-width: 768px) {
   .reviews {
     padding-top: 32px;
+  }
+
+  .reviews-title {
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 24px;
   }
 
   .reviews-list {
