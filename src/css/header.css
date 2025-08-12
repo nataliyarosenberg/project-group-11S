@@ -1,6 +1,9 @@
 .section-header {
   height: 69px;
 } 
+.container{
+  height: 69px}
+
 .header-container {
   display: flex;
   align-items: center;
