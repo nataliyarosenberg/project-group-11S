@@ -1,9 +1,9 @@
 import { loadOrderModal, toggleModal } from './js/order-modal.js';
 import './js/product-modal.js'; // ensures it sets up its listeners
-import './js/our-furniture.js'; 
-import './js/hero.js';
-import './js/burger-menu.js';
-import './js/reviews.js'; 
+// import './js/our-furniture.js'; 
+// import './js/hero.js';
+// import './js/burger-menu.js';
+// import './js/reviews.js'; 
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadOrderModal();
