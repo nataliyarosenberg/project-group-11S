@@ -1,5 +1,5 @@
-import { loadOrderModal, toggleModal } from './js/order-modal.js';
-import './js/product-modal.js'; // ensures it sets up its listeners
+import { loadOrderModal, toggleModal } from '/js/order-modal.js';
+import '/js/product-modal.js'; // ensures it sets up its listeners
 
 document.addEventListener('DOMContentLoaded', async () => {
   await loadOrderModal();
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
-import { initAccordion } from './js/faq.js';
+import { initAccordion } from '/js/faq.js';
 initAccordion();
 
 
